@@ -60,7 +60,7 @@ SERVER_LOG_PATH = "serverlog.txt"
 # your specific lobby's parameters 
 #================================================================================#
 MIN_PLAYER_LEVEL = 1
-LOBBY_RULES = f">>>>>Welcome to RBB MOD server!<<<<<===[Type 'commands' for more commands] Server rules: Server will prioritize mod players over non-mod player to keep the game synced."
+LOBBY_RULES = f">>>>>Welcome to RBB MOD server!<<<<<===[Type 'commands' for more commands] Server rule: Autobalance before gamestart."
 MIN_VOTES_TO_KICK = 3
 MAX_BADWORDS_BEFORE_KICK = 3
 MIN_VOTES_TO_ROTATE = 3
@@ -92,7 +92,8 @@ MAP_POOL = [
 #    "Destruction_3x3_Pyeongtaek",
 #    "Destruction_3x3_Gangjin",              #flood
      "Destruction_2x3_Gangjin",
-     "Destruction_5x3_Marine_1"              #STTP
+     "Destruction_5x3_Marine_1",              #STTP
+     "Destruction_5x3_Marine_1_small"
 ]
 
 #================================================================================#
@@ -389,7 +390,7 @@ class Game:
                             self.send_message(f'player {pName} kicked for not using the matching mod', lobby_only=True)
                             player.kick()
 
-        if len(self.players)>= (self.minPlayersToStart/2):
+        if len(self.players)>= (self.minPlayersToStart):
             self.balance(execute=True)
             if self.minPlayersToStart<19:
                 if len(self.players)> (self.minPlayersToStart):
@@ -638,8 +639,12 @@ class Game:
     def map_random_rotate(self) -> None:
         """Rotate maps from the pool, making sure not to select the same one again!"""
         new_id = self.currentMapId
-        while self.currentMapId == new_id:
-            new_id = math.floor(len(MAP_POOL) * random())
+        
+        new_id += 1
+        if new_id==(len(MAP_POOL)-1):
+            new_id = 0
+        #while self.currentMapId == new_id:
+        #    new_id = math.floor(len(MAP_POOL) * random())
         Server.change_map(MAP_POOL[new_id])
         print(f"Rotating map to {MAP_POOL[new_id]}")
 
