@@ -1,0 +1,170 @@
+Couldn't read 'pkey' or 'cert' file.  To generate a key
+and self-signed certificate, run:
+  openssl genrsa -out pkey 2048
+  openssl req -new -key pkey -out cert.req
+  openssl x509 -req -days 365 -in cert.req -signkey pkey -out cert
+Starting Libevent 2.0.18-stable.
+Available methods are : 
+    epoll
+    poll
+    select
+Using Libevent with backend method epoll
+  Edge-triggered events are supported.
+  O(1) event notification is supported.
+
+---------------------------------------------------
+Initializing Server Properties : 
+Variable NbMaxPlayer set to 20
+Variable NbPlayer set to 0
+Variable Seed set to 1
+Variable Private set to 0
+Variable ServerName set to Default Server Name
+Variable WithHost set to 0
+Variable ServerProtocol set to 0.0
+Variable TimeLeft set to 0
+Variable Version set to 0
+Variable GameState set to 0
+Variable Password set to 
+Variable NeedPassword set to 0
+Variable GameType set to 0
+Variable Map set to Destruction_5x3_Asgard_10v10
+Variable InitMoney set to 4000
+Variable TimeLimit set to 1200
+Variable ScoreLimit set to 4000
+Variable NbIA set to 0
+Variable VictoryCond set to 1
+Variable IncomeRate set to 3
+Variable WarmupCountdown set to 120
+Variable DeploiementTimeMax set to 120
+Variable DebriefingTimeMax set to 30
+Variable LoadingTimeMax set to 120
+Variable NbMinPlayer set to 10
+Variable DeltaMaxTeamSize set to 10
+Variable MaxTeamSize set to 10
+Variable NationConstraint set to -1
+Variable ThematicConstraint set to -1
+Variable DateConstraint set to -1
+---------------------------------------------------
+Overriding Server Properties from variables.ini file : 
+Variable ServerName set to "Realistic But Balanced, RBB MOD V3"
+Variable Map set to "Destruction_5x3_Marine_1"
+Variable InitMoney set to "55000"
+Variable ScoreLimit set to "60000"
+Variable NbMinPlayer set to "4"
+Variable DebriefingTimeMax set to "180"
+Variable DeploiementTimeMax set to "180"
+Variable WarmupCountdown set to "180"
+Variable TimeLimit set to "2700"
+Variable DeltaMaxTeamSize set to "1"
+Variable IncomeRate set to "5"
+---------------------------------------------------
+Retrieving admin list from admins.ini file : 
+---------------------------------------------------
+Initializing Server Protocol Property : 1.0
+Variable ServerProtocol set to "1.0"
+---------------------------------------------------
+Variable TimeLeft set to "4294967295"
+Updating clients banned list
+Entering in matchmaking state
+Connecting to match making server
+Connected to match making server
+Stats URL for game http://178.32.126.73:8080/stats/
+Connection to match making server validated , dedicated server can be used by clients on IP 45.77.140.150:10050
+ServerPropertyReporting listening for client !
+Using http://178.32.126.73:8080/stats/ as CouchDB stats source
+New client trying to connect from IP 202.181.144.233:60047 (socket : 12)
+Variable NbPlayer set to "1"
+Client added in session (EugNetId : 1051959, UserSessionId : 1, socket : 12, IP : 202.181.144.233:60047)
+Client 1051959 variable PlayerName set to "BBRRBB"
+Client 1051959 variable PlayerLevel set to "40"
+Client 1051959 variable PlayerElo set to "1500"
+Client 1051959 variable PlayerAvatar set to "VirtualData/SteamGamerPicture/76561198294757719"
+Variable Version set to "68335"
+Client 1051959 request command : setpvar 1051959 PlayerDeckContent @IM8ACoYpZKWSk1LAKbwv5r+K2Gtg
+Client 1051959 variable PlayerDeckContent set to "@IM8ACoYpZKWSk1LAKbwv5r+K2Gtg"
+Client 1051959 request command : setpvar 1051959 PlayerDeckName blue test
+Client 1051959 variable PlayerDeckName set to "blue test"
+Client 1051959 request command : setpvar 1051959 PlayerDeckContent @IM8ACoYpZKWSk1LAKbwv5r+K2Gtg
+Client 1051959 request command : setpvar 1051959 PlayerDeckName blue test
+Client 1051959 request command : setpvar 1051959 PlayerName BBRRBB
+Client 1051959 request command : setpvar 1051959 PlayerAvatar VirtualData/SteamGamerPicture/76561198294757719
+Client 1051959 request command : setpvar 1051959 PlayerLevel 40
+New client trying to connect from IP 210.6.88.96:62019 (socket : 14)
+Variable NbPlayer set to "2"
+Client added in session (EugNetId : 1342254, UserSessionId : 2, socket : 14, IP : 210.6.88.96:62019)
+Client 1342254 variable PlayerName set to "ammthony"
+Client 1342254 variable PlayerLevel set to "21"
+Client 1342254 variable PlayerElo set to "1500"
+Client 1342254 variable PlayerAvatar set to "VirtualData/SteamGamerPicture/76561198452280549"
+Client 1342254 variable PlayerAlliance set to "1"
+Client 1342254 request command : setpvar 1342254 PlayerDeckContent @IMUB235FpZGhAsjQgTUmYLPzMGLCPTFhHoYsGLBi4YuGMBjBiKU1FNSMEjBIoyKMijoo6akmpFrxa8U3FZhR8UfRZxWsSbppBUQVEA==
+Client 1342254 variable PlayerDeckContent set to "@IMUB235FpZGhAsjQgTUmYLPzMGLCPTFhHoYsGLBi4YuGMBjBiKU1FNSMEjBIoyKMijoo6akmpFrxa8U3FZhR8UfRZxWsSbppBUQVEA=="
+Client 1342254 request command : setpvar 1342254 PlayerDeckName all fira
+Client 1342254 variable PlayerDeckName set to "all fira"
+Client 1342254 request command : setpvar 1342254 PlayerDeckContent @IMUB235FpZGhAsjQgTUmYLPzMGLCPTFhHoYsGLBi4YuGMBjBiKU1FNSMEjBIoyKMijoo6akmpFrxa8U3FZhR8UfRZxWsSbppBUQVEA==
+Client 1342254 request command : setpvar 1342254 PlayerDeckName all fira
+Client 1342254 request command : setpvar 1342254 PlayerDeckContent @Ts8KG6Z4hyo6Z5cdK8uOleW3UOxjqXlFz7si4c5Rd4covHD0Q9EuFLhS74u1LiC4guHLdS3YtyLci3FOYDly3QvMLyS8gvILlQcQHELuC8Y=
+Client 1342254 variable PlayerDeckContent set to "@Ts8KG6Z4hyo6Z5cdK8uOleW3UOxjqXlFz7si4c5Rd4covHD0Q9EuFLhS74u1LiC4guHLdS3YtyLci3FOYDly3QvMLyS8gvILlQcQHELuC8Y="
+Client 1342254 request command : setpvar 1342254 PlayerDeckName dlc
+Client 1342254 variable PlayerDeckName set to "dlc"
+Client 1342254 request command : setpvar 1342254 PlayerName ammthony
+Client 1342254 request command : setpvar 1342254 PlayerAvatar VirtualData/SteamGamerPicture/76561198452280549
+Client 1342254 request command : setpvar 1342254 PlayerLevel 21
+Network error with client 1342254 at IP 210.6.88.96:62019 -> Error during reading. End of file received.
+Disconnecting client 1342254 with IP 210.6.88.96:62019 (reason : ConnectionLost)
+Variable NbPlayer set to "1"
+New client trying to connect from IP 184.22.168.37:58572 (socket : 14)
+Variable NbPlayer set to "2"
+Client added in session (EugNetId : 285349, UserSessionId : 3, socket : 14, IP : 184.22.168.37:58572)
+Client 285349 variable PlayerName set to "double_d"
+Client 285349 variable PlayerLevel set to "27"
+Client 285349 variable PlayerElo set to "1500"
+Client 285349 variable PlayerAvatar set to "VirtualData/SteamGamerPicture/76561198063071141"
+Client 285349 variable PlayerAlliance set to "1"
+Client 285349 request command : setpvar 285349 PlayerDeckContent @IJMBk9Z8Kes+JGebEjPGMIjyRl2rsmPNjzYzm7pjyY8mPlj0bv0E0voDGC7EvkLxCI4iNJkC8EvHLvS+prgTESxIv4L4wA==
+Client 285349 variable PlayerDeckContent set to "@IJMBk9Z8Kes+JGebEjPGMIjyRl2rsmPNjzYzm7pjyY8mPlj0bv0E0voDGC7EvkLxCI4iNJkC8EvHLvS+prgTESxIv4L4wA=="
+Client 285349 request command : setpvar 285349 PlayerDeckName dg-armor
+Client 285349 variable PlayerDeckName set to "dg-armor"
+Client 285349 request command : setpvar 285349 PlayerDeckContent @IJMBk9Z8Kes+JGebEjPGMIjyRl2rsmPNjzYzm7pjyY8mPlj0bv0E0voDGC7EvkLxCI4iNJkC8EvHLvS+prgTESxIv4L4wA==
+Client 285349 request command : setpvar 285349 PlayerDeckName dg-armor
+Client 285349 request command : setpvar 285349 PlayerDeckContent @UrMB06hxidQ4xOodiVMDLLn3GFzryyMY5Tbk25NuLbi27NurJ01BNXSbmXCB6JecQxlTRd4Xhkg5NCXjF2ZboXaI+JSinMFZoOMjkk3oS2A=
+Client 285349 variable PlayerDeckContent set to "@UrMB06hxidQ4xOodiVMDLLn3GFzryyMY5Tbk25NuLbi27NurJ01BNXSbmXCB6JecQxlTRd4Xhkg5NCXjF2ZboXaI+JSinMFZoOMjkk3oS2A="
+Client 285349 request command : setpvar 285349 PlayerDeckName tito on the rise
+Client 285349 variable PlayerDeckName set to "tito on the rise"
+Client 285349 request command : setpvar 285349 PlayerName double_d
+Client 285349 request command : setpvar 285349 PlayerAvatar VirtualData/SteamGamerPicture/76561198063071141
+Client 285349 request command : setpvar 285349 PlayerLevel 27
+Network error with client 285349 at IP 184.22.168.37:58572 -> Error during reading. End of file received.
+Disconnecting client 285349 with IP 184.22.168.37:58572 (reason : ConnectionLost)
+Variable NbPlayer set to "1"
+New client trying to connect from IP 223.16.83.234:51120 (socket : 14)
+Variable NbPlayer set to "2"
+Client added in session (EugNetId : 981295, UserSessionId : 4, socket : 14, IP : 223.16.83.234:51120)
+Client 981295 variable PlayerName set to "kw0429"
+Client 981295 variable PlayerLevel set to "55"
+Client 981295 variable PlayerElo set to "1500"
+Client 981295 variable PlayerAvatar set to "VirtualData/SteamGamerPicture/76561198257794101"
+Client 981295 variable PlayerAlliance set to "1"
+Client 981295 request command : setpvar 981295 PlayerDeckContent @AMcCWglB5QOqZoJTK2TKmgajAQNSZYyRMrZMYCMkHMGLkhBakSdlKKXEl0FX6a8keFKpR8F0lqgRuEfprySakmpTCLYitouqL+UoBIJHCl1FKJSgS8FNRKWA
+Client 981295 variable PlayerDeckContent set to "@AMcCWglB5QOqZoJTK2TKmgajAQNSZYyRMrZMYCMkHMGLkhBakSdlKKXEl0FX6a8keFKpR8F0lqgRuEfprySakmpTCLYitouqL+UoBIJHCl1FKJSgS8FNRKWA"
+Client 981295 request command : setpvar 981295 PlayerDeckName 981295
+Client 981295 variable PlayerDeckName set to "981295"
+Client 981295 request command : setpvar 981295 PlayerDeckContent @AMcCWglB5QOqZoJTK2TKmgajAQNSZYyRMrZMYCMkHMGLkhBakSdlKKXEl0FX6a8keFKpR8F0lqgRuEfprySakmpTCLYitouqL+UoBIJHCl1FKJSgS8FNRKWA
+Client 981295 request command : setpvar 981295 PlayerDeckName 981295
+Client 981295 request command : setpvar 981295 PlayerDeckContent @QscKmtMKxyiYE6DIcYVkOPSjCCsRgxWNOwrGnY6EIaemENCmiBisJeQmomGICSlZJVSZUcVHMJvQckqMiZol+JfRm0B1ATJ10bpBCRRkLBA9RIkSIitQE0R8HIBxwA==
+Client 981295 variable PlayerDeckContent set to "@QscKmtMKxyiYE6DIcYVkOPSjCCsRgxWNOwrGnY6EIaemENCmiBisJeQmomGICSlZJVSZUcVHMJvQckqMiZol+JfRm0B1ATJ10bpBCRRkLBA9RIkSIitQE0R8HIBxwA=="
+Client 981295 request command : setpvar 981295 PlayerDeckName RED_ships
+Client 981295 variable PlayerDeckName set to "RED_ships"
+Client 981295 request command : setpvar 981295 PlayerName kw0429
+Client 981295 request command : setpvar 981295 PlayerAvatar VirtualData/SteamGamerPicture/76561198257794101
+Client 981295 request command : setpvar 981295 PlayerLevel 55
+Client 981295 request command : setpvar 981295 PlayerAlliance 0
+Client 981295 request command : setpvar 981295 PlayerLevel 55
+Client 981295 request command : setpvar 981295 PlayerAlliance 0
+Network error with client 981295 at IP 223.16.83.234:51120 -> Error during reading. End of file received.
+Disconnecting client 981295 with IP 223.16.83.234:51120 (reason : ConnectionLost)
+Variable NbPlayer set to "1"
+Network error with client 1051959 at IP 202.181.144.233:60047 -> Error during reading. End of file received.
+Disconnecting client 1051959 with IP 202.181.144.233:60047 (reason : ConnectionLost)
+Variable NbPlayer set to "0"
+Variable Version set to "0"

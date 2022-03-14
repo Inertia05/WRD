@@ -1,0 +1,26 @@
+Wargame2 Dedicated Server is provided "AS IS" WITHOUT WARRANTY OF ANY KIND,
+EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+
+To install dedicated server, please follow these steps :
+- Edit login.ini file and insert your login and the dedicated key that eugen must have provided
+- Edit variables.ini and configure the games options
+- Launch wargame3-server with command line : ./wargame3-server +port XXXX +ip_mms 178.32.126.73 +port_mms 10002 +ip YY.YY.YY.YY
+where your must replace XXXX by a valid port > 10000 and YY.YY.YY.YY by the IP of your server.
+
+Enjoy !
+
+
+Optional steps :
+- You can use rcon protocol to kick/ban people, change server properties at runtime.
+You can active rcon by specify the option +rcon_password and +rcon_port when you start your server.
+You should then be able to connect using rcon client. Available commands are :
+display_all_clients                         -> Display the list of connected clients with their Id
+kick CLIENT_ID                              -> Kick the client with Id CLIENT_ID
+kick CLIENT_PSEUDO                          -> Kick the client with pseudo CLIENT_PSEUDO (CLIENT_PSEUDO can be a part of his real pseudo)
+ban CLIENT_ID DELAY_IN_HOUR                 -> Ban the player with Id CLIENT_ID for DELAY_IN_HOUR hours
+ban CLIENT_PSEUDO DELAY_IN_HOUR             -> Ban the player with pseudo CLIENT_PSEUDO for DELAY_IN_HOUR hours (CLIENT_PSEUDO can be a part of his real pseudo)
+unban CLIENT_ID                             -> Unban the player with Id CLIENT_ID
+setsvar VARIABLE_NAME VARIABLE_VALUE        -> Allow you to change one of the settings of the server (have a look at variables.ini)
+
+- You can have a look at the admins.ini file to add some admins to your server.
