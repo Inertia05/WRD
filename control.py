@@ -115,6 +115,7 @@ MOTORIZED_DECK_TYPES = [81]
 NON_EXISTENT_CLIENT_ID = 0x0c6c0b
 
 kickVanilla = False
+MOD = False
 
 class Side(IntEnum):
     Bluefor = 0
@@ -394,7 +395,8 @@ class Game:
             self.balance(execute=True)
             if self.minPlayersToStart<19:
                 if len(self.players)> (self.minPlayersToStart):
-                    Server.change_min_players_to_start(len(self.players))
+                    if not MOD:
+                        Server.change_min_players_to_start(len(self.players))
 
     def on_player_deck_set(self, playerid: str, playerdeck: str) -> None:
         if Deck.is_support_deck(playerdeck):
@@ -571,10 +573,11 @@ class Game:
 
     def handle_income_request(self, msg: str, from_player: Player) -> None:
         global kickVanilla
+        global MOD
         newincome = msg.split(' ')[1].lower()
         if newincome not in INCOME_MAP:
-            if newincome not in ["1v1","4v4","10v10", "MOD"]:
-                self.send_message("Unknown income, options are: 1v1, 4v4, 10v10, " + ', '.join(INCOME_MAP.keys()), lobby_only=True)
+            if newincome not in ["1v1","4v4","10v10", "MOD", "Vanilla"]:
+                self.send_message("Unknown income, options are: 1v1, 4v4, 10v10, MOD, Vanilla" + ', '.join(INCOME_MAP.keys()), lobby_only=True)
                 return
         from_player.votes['income'][newincome] = True
         nvotes = self.count_votes('income', newincome, same_team=False)
@@ -598,8 +601,10 @@ class Game:
                 Server.change_income_rate(3)
             elif newincome == "MOD":
                 kickVanilla = True
+                MOD = True
             elif newincome == "Vanilla":
                 kickVanilla = False
+                MOD = False
             else:
                 Server.change_income_rate(INCOME_MAP[newincome])
                 Server.change_money(MONEY_MAP[newincome])
