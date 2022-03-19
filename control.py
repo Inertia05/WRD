@@ -534,12 +534,8 @@ class Game:
         return None
 
     def handle_balance_request(self, from_player: Player) -> None:
-        global kickVanilla
         self.balance()
-        if kickVanilla == True:
-            kickVanilla = False
-        elif kickVanilla == False:
-            kickVanilla = True
+
 
     def handle_team_affiliation(self, msg: str, from_player: Player) -> None:
         team_requested = msg.split(' ')[1]
@@ -574,9 +570,10 @@ class Game:
                 player.votes['year'] = {}
 
     def handle_income_request(self, msg: str, from_player: Player) -> None:
+        global kickVanilla
         newincome = msg.split(' ')[1].lower()
         if newincome not in INCOME_MAP:
-            if newincome not in ["1v1","4v4","10v10"]:
+            if newincome not in ["1v1","4v4","10v10", "MOD"]:
                 self.send_message("Unknown income, options are: 1v1, 4v4, 10v10, " + ', '.join(INCOME_MAP.keys()), lobby_only=True)
                 return
         from_player.votes['income'][newincome] = True
@@ -599,6 +596,10 @@ class Game:
                 Server.change_money(10000)
                 Server.change_score_limit(11000)
                 Server.change_income_rate(3)
+            elif newincome == "MOD":
+                kickVanilla = True
+            elif newincome == "Vanilla":
+                kickVanilla = False
             else:
                 Server.change_income_rate(INCOME_MAP[newincome])
                 Server.change_money(MONEY_MAP[newincome])
@@ -640,11 +641,11 @@ class Game:
         """Rotate maps from the pool, making sure not to select the same one again!"""
         new_id = self.currentMapId
         
-        new_id += 1
-        if new_id==(len(MAP_POOL)-1):
-            new_id = 0
-        #while self.currentMapId == new_id:
-        #    new_id = math.floor(len(MAP_POOL) * random())
+        #new_id += 1
+        #if new_id==(len(MAP_POOL)-1):
+        #    new_id = 0
+        while self.currentMapId == new_id:
+            new_id = math.floor(len(MAP_POOL) * random())
         Server.change_map(MAP_POOL[new_id])
         print(f"Rotating map to {MAP_POOL[new_id]}")
 
