@@ -72,16 +72,18 @@ GENERAL_BLUE_DECK = "@Hs8KGG5CiPWIZrDQSmUgBUimgjmLJlTw6CeCLEkaM6Y0qHI3ypcoaIjS1J
 GENERAL_RED_DECK = "@Us8JknYKpymQ0KaIKC4i1CeRZKDIvjGshwUAcYm9aWwckJ+IrSdog7IBCBUkvJGSRwoUIOiNgiPRSidknuJQCBMohSXg"
 MAP_POOL = [
 #    "Destruction_2x2_port_Wonsan_Terrestre",
+    "Destruction_2x3_Anbyon",                 #hop and glory
      "Destruction_2x2_port_Wonsan",
-     "Destruction_2x3_Montagne_1",            #death row
+#     "Destruction_2x3_Montagne_1",            #death row
 #    "Destruction_2x3_Hwaseong",
 #    "Destruction_5x3_Asgard_10v10",
-     "Destruction_3x3_Marine_3",             #Another D-DAY
+#     "Destruction_3x3_Marine_3",             #Another D-DAY
 #    "Destruction_2x3_Hwaseong",
-#    "Destruction_2x3_Esashi",
+#    "Destruction_2x3_Esashi",               #tropic storm
 #    "Destruction_2x3_Boseong",
-     "Destruction_3x2_Boryeong", #gun boat
-     "Destruction_2x3_Tohoku",               #paddy field 2v2
+#     "Destruction_3x2_Boryeong", #gun boat
+#     "Destruction_2x3_Tohoku",               #paddy field 2v2
+     "Destruction_2x3_Tohoku_Alt",
 #    "Destruction_2x3_Anbyon",
 #    "Destruction_3x2_Boryeong_Terrestre",
 #    "Destruction_3x2_Taean",
@@ -91,9 +93,10 @@ MAP_POOL = [
 #    "Destruction_3x3_Muju",
 #    "Destruction_3x3_Pyeongtaek",
 #    "Destruction_3x3_Gangjin",              #flood
-     "Destruction_2x3_Gangjin",
+     "Destruction_2x3_Gangjin",              #mud fight
      "Destruction_5x3_Marine_1",              #STTP
-     "Destruction_5x3_Marine_1_small"
+     "Destruction_5x3_Marine_1_small",
+     "Destruction_3x3_Marine_2"             #smoke in the water
 ]
 
 #================================================================================#
@@ -576,8 +579,8 @@ class Game:
         global modMOD
         newincome = msg.split(' ')[1].lower()
         if newincome not in INCOME_MAP:
-            if newincome not in ["1v1","4v4","10v10", "mod", "vanilla", "total"]:
-                self.send_message("Unknown income, options are: 1v1, 4v4, 10v10, MOD, Vanilla, " + ', '.join(INCOME_MAP.keys()), lobby_only=True)
+            if newincome not in ["1v1","4v4","10v10", "mod", "vanilla","total"]:
+                self.send_message("Unknown income, options are: 1v1, 4v4, 10v10, MOD, " + ', '.join(INCOME_MAP.keys()), lobby_only=True)
                 return
         from_player.votes['income'][newincome] = True
         nvotes = self.count_votes('income', newincome, same_team=False)
@@ -587,28 +590,27 @@ class Game:
             if newincome =="1v1":
                 Server.change_min_players_to_start(2)
                 Server.change_money(1000)
-                Server.change_score_limit(1500)
                 Server.change_income_rate(3)
             elif newincome == "4v4":
                 Server.change_min_players_to_start(4)
                 Server.change_money(4000)
-                Server.change_score_limit(8000)
                 Server.change_income_rate(3)
             elif newincome =="10v10":
-                Server.change_min_players_to_start(18)
+                Server.change_min_players_to_start(14)
                 Server.change_money(10000)
-                Server.change_score_limit(11000)
                 Server.change_income_rate(3)
             elif newincome == "mod":
+                Server.change_name('Autobalance, RBB MOD V3.26-Germany')
                 kickVanilla = True
                 modMOD = True
                 self.send_message("MOD ON")
             elif newincome == "vanilla":
+                Server.change_name('Autobalance, RBB Vanilla-Germany')
                 kickVanilla = False
                 modMOD = False
                 self.send_message("Vanilla ON")
             elif newincome == "total":
-                Server.change_score_limit(0)
+                Server.change_score_limit(80000)
             else:
                 Server.change_income_rate(INCOME_MAP[newincome])
                 Server.change_money(MONEY_MAP[newincome])
