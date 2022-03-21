@@ -594,11 +594,11 @@ class Game:
             elif newincome == "4v4":
                 Server.change_min_players_to_start(4)
                 Server.change_money(4000)
-                Server.change_income_rate(3)
+                Server.change_income_rate(5)
             elif newincome =="10v10":
                 Server.change_min_players_to_start(14)
                 Server.change_money(10000)
-                Server.change_income_rate(3)
+                Server.change_income_rate(5)
             elif newincome == "mod":
                 Server.change_name('Autobalance, RBB MOD V3.26-Germany')
                 kickVanilla = True
