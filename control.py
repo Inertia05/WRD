@@ -600,12 +600,12 @@ class Game:
                 Server.change_money(10000)
                 Server.change_income_rate(5)
             elif newincome == "mod":
-                Server.change_name('Autobalance, RBB MOD V3.26-Germany')
+                Server.change_name('RBB-HongKong-Autobalance-MOD V3.26')
                 kickVanilla = True
                 modMOD = True
                 self.send_message("MOD ON")
             elif newincome == "vanilla":
-                Server.change_name('Autobalance, RBB Vanilla-Germany')
+                Server.change_name('RBB-HongKong-Autobalance-Vanilla')
                 kickVanilla = False
                 modMOD = False
                 self.send_message("Vanilla ON")
