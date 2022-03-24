@@ -299,10 +299,10 @@ class Server:
 
     @classmethod
     def change_income_rate(cls, number: int) -> None:
-        if 0 <= number <= 5:
+        if 0 <= number <= 7:
             Rcon.execute("setsvar IncomeRate " + str(number))
         else:
-            print('valid number for income: 0-5')
+            print('valid number for income: 0-7')
 
     @classmethod
     def change_min_players_to_start(cls, number: int) -> None:
@@ -598,14 +598,14 @@ class Game:
             elif newincome =="10v10":
                 Server.change_min_players_to_start(14)
                 Server.change_money(10000)
-                Server.change_income_rate(5)
+                Server.change_income_rate(7)
             elif newincome == "mod":
-                Server.change_name('RBB-HongKong-Autobalance-MOD V3.26')
+                Server.change_name('Autobalance-RBB-MOD V3.26, HongKong')
                 kickVanilla = True
                 modMOD = True
                 self.send_message("MOD ON")
             elif newincome == "vanilla":
-                Server.change_name('RBB-HongKong-Autobalance-Vanilla')
+                Server.change_name('Autobalance-RBB-Vanilla, HongKong')
                 kickVanilla = False
                 modMOD = False
                 self.send_message("Vanilla ON")
