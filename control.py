@@ -74,7 +74,7 @@ MAP_POOL = [
 #    "Destruction_2x2_port_Wonsan_Terrestre",
     "Destruction_2x3_Anbyon",                 #hop and glory
      "Destruction_2x2_port_Wonsan",
-#     "Destruction_2x3_Montagne_1",            #death row
+     "Destruction_2x3_Montagne_1",            #death row
 #    "Destruction_2x3_Hwaseong",
 #    "Destruction_5x3_Asgard_10v10",
 #     "Destruction_3x3_Marine_3",             #Another D-DAY
